@@ -25,10 +25,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Navbar />
-        <main className="flex flex-col items-center justify-between">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

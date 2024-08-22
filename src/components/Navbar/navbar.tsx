@@ -12,6 +12,9 @@ import {
 } from "@/components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import Transtiton from "@/components/Transition/transition";
+import Link from "next/link";
+import Icon from "../Icon";
+import { Badge } from "../ui/badge";
 
 export default function Navbar() {
   return (
@@ -31,6 +34,22 @@ export default function Navbar() {
         <Transtiton mode="top">
           <ul className="gap-6 lg:flex hidden">
             <NavigationMenu />
+            
+            <Link className="font-bold text-black " href={""}>
+              <li className="hover:bg-zinc-200 flex justify-center items-center space-x-1  py-4 px-5 transition-colors">
+                <span>SEPETİM</span>
+                <Badge className="aspect-square w-1 items-center justify-center flex">
+                  1
+                </Badge>
+              </li>
+            </Link>
+
+            <Link className="font-bold text-black " href={"/auth/login"}>
+              <li className="hover:bg-zinc-200  py-4 px-5 transition-colors">
+                {"giriş yap".toUpperCase()}
+              </li>
+            </Link>
+
           </ul>
         </Transtiton>
       </div>

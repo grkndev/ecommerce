@@ -39,8 +39,8 @@ export default function Slider() {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <div className="absolute z-50 bottom-10 flex items-center justify-between gap-4 right-10">
-        <div className="flex items-center gap-4">
+      <div className="absolute z-50 bottom-10 flex items-center justify-between gap-4 right-10 ">
+        <div className="flex items-center gap-4 ">
           <Button
             className="w-10  h-10 rounded-full bg-[#FE7528] hover:bg-[#a04d1d]"
             onClick={() => {
