@@ -1,113 +1,264 @@
+import Branding from "@/components/Branding/branding";
+import Slider from "@/components/Slider/slider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className="w-full items-center justify-center flex flex-col">
+      <Slider />
+      <Branding />
+      <div className="w-full px-32 items-center flex flex-col">
+        <MostSelling />
+        <div className="w-full h-1 bg-zinc-200 mt-16  rounded-full " />
+        <NewAdded />
+        <div className="w-full h-1 bg-zinc-200 mt-16  rounded-full " />
+        <CreateYourStyle />
+        <div className="w-full h-1 bg-zinc-200 mt-16  rounded-full " />
+        <FeedBack />
+        <News />
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        <footer className="my-8 items-start justify-center flex flex-col w-full">
+          <div className="items-center justify-between flex w-full">
+            <div className="flex flex-col items-center justify-center">
+              <p className="font-bold text-6xl">BBL ESPORTS</p>
+              <p>BELIVE YOUR YOURSELF BELIVE YOUR CULTURE</p>
+            </div>
+            <div className="flex flex-row items-start justify-between w-1/2">
+              <div className="flex flex-col space-y-1">
+                <span className="font-bold text-2xl">BİZ</span>
+                <div className="flex flex-col space-y-1 text-zinc-500">
+                  <Link href={"#"}>BİGBOSSLAYF</Link>
+                  <Link href={"#"}>BBL ESPORTS</Link>
+                  <Link href={"#"}>BBL TALENT</Link>
+                  <Link href={"#"}>BBL ACADEMY</Link>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-1">
+                <span className="font-bold text-2xl">KURUMSAL</span>
+                <div className="flex flex-col space-y-1 text-zinc-500">
+                  <Link href={"#"}>İletişim</Link>
+                  <Link href={"#"}>İletişim Formu</Link>
+                  <Link href={"#"}>Kargo Takibi</Link>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-1">
+                <span className="font-bold text-2xl">YARDIM</span>
+                <div className="flex flex-col space-y-1 text-zinc-500">
+                  <Link href={"#"}>Giyim Ölçüleri</Link>
+                  <Link href={"#"}>Şifremi Unuttum</Link>
+                  <Link href={"#"}>Kargo ve Teslimat Detayları</Link>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-1">
+                <span className="font-bold text-2xl">ALIŞVERİŞ</span>
+                <div className="flex flex-col space-y-1 text-zinc-500">
+                  <Link href={"#"}>Satış Sözleşmesi</Link>
+                  <Link href={"#"}>Gizlilik ve Güvenlik</Link>
+                  <Link href={"#"}>İptal ve İade koşulları</Link>
+                  <Link href={"#"}>Kişisel Veriler Politikası</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full h-1 bg-zinc-200 my-4  rounded-full " />
+
+          <div className="text-zinc-500">
+            <p className="">
+              BBL ESPORTS, bir BigBossLayf kuruluşudur.
+            </p>
+            <p>
+              BBL YAPIM YAZILIM REK. HİZ. VE BİL. OYUN FAAL. LTD. ŞTİ.  ©️
+              2020-2024. Tüm Hakları Saklıdır
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+function News() {
+  return (
+    <div className="w-full flex items-center justify-between p-14 bg-[#101010] mt-16  rounded-3xl ">
+      <div className="text-white font-bold text-4xl">
+        <p>YENİ ÜRÜN VE KAMPANYALARDAN</p>
+        <p>ANINDA HABERDAR OLUN</p>
+      </div>
+      <div className="w-1/2 space-y-4">
+        <Input className="w-full" placeholder="E-Posta adresiniz" />
+        <Button variant={"secondary"} className="w-full">
+          Abone Ol
+        </Button>
+      </div>
+    </div>
+  );
+}
+function FeedBack() {
+  return (
+    <div className="flex flex-col space-y-4 mt-16">
+      <p className="font-bold text-4xl">MEMNUNİYET BİZİM İÇİN ÇOK ÖNEMLİ!</p>
+      <div className="flex flex-row gap-8">
+        <CustomerReview />
+        <CustomerReview />
+        <CustomerReview />
+      </div>
+    </div>
+  );
+}
+function CustomerReview() {
+  return (
+    <div className="hover:shadow-2xl transition-shadow duration-200  border-2 border-[#ebebeb] flex flex-col  rounded-lg p-4 w-full space-y-4">
+      <div className="flex flex-row space-x-4">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          className="w-6 h-6"
+          src={"/assests/star.png"}
+          width={500}
+          height={500}
+          alt="Star"
+        />
+        <Image
+          className="w-6 h-6"
+          src={"/assests/star.png"}
+          width={500}
+          height={500}
+          alt="Star"
+        />
+        <Image
+          className="w-6 h-6"
+          src={"/assests/star.png"}
+          width={500}
+          height={500}
+          alt="Star"
+        />
+        <Image
+          className="w-6 h-6"
+          src={"/assests/star.png"}
+          width={500}
+          height={500}
+          alt="Star"
+        />
+        <Image
+          className="w-6 h-6"
+          src={"/assests/star.png"}
+          width={500}
+          height={500}
+          alt="Star"
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="flex flex-col space-y-2">
+        <p className="font-bold text-3xl">Ferit K.</p>
+        <p className="text-lg">
+          "Online alışveriş deneyimim mükemmeldi! Ürünlerin kalitesi harika,
+          fiyatlar uygun ve kargo çok hızlı. Güvenilir ve sorunsuz bir site,
+          kesinlikle tekrar alışveriş yapacağım!"
+        </p>
       </div>
-    </main>
+    </div>
+  );
+}
+function CreateYourStyle() {
+  return (
+    <div className="mt-16 bg-zinc-200 rounded-[32px] w-full items-center justify-center flex flex-col px-8 py-10 space-y-6">
+      <span className="font-bold text-6xl">KENDİ TARZINI YARAT</span>
+      <div className=" flex-col flex gap-6">
+        <div className="flex-row flex gap-6">
+          <Image
+            className="w-[35%]"
+            src={"/assests/kty/kty1.png"}
+            alt="kty1"
+            width={1000}
+            height={1000}
+          />
+          <Image
+            className="w-[65%]"
+            src={"/assests/kty/kty2.png"}
+            alt="kty2"
+            width={1000}
+            height={1000}
+          />
+        </div>
+        <div className="flex flex-row gap-6">
+          <Image
+            className="w-[65%]"
+            src={"/assests/kty/kty3.png"}
+            alt="kty3"
+            width={1000}
+            height={1000}
+          />
+          <Image
+            className="w-[35%]"
+            src={"/assests/kty/kty4.png"}
+            alt="kty4"
+            width={1000}
+            height={1000}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+function NewAdded() {
+  return (
+    <div className="mt-16  w-full items-center justify-center flex flex-col gap-y-9">
+      <h1 className="font-bold text-4xl">YENİ EKLENENLER</h1>
+      <div className="flex flex-row gap-x-16 items-center justify-center">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+      <div className="w-full items-center justify-center flex">
+        <Button variant={"outline"} className="w-1/3">
+          Devamını Gör
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function MostSelling() {
+  return (
+    <div className="mt-16 w-full items-center justify-center flex flex-col gap-y-9">
+      <h1 className="font-bold text-4xl">EN ÇOK SATANLAR</h1>
+      <div className="flex flex-row gap-x-16 items-center justify-center">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+      <div className="w-full items-center justify-center flex">
+        <Button variant={"outline"} className="w-1/3">
+          Devamını Gör
+        </Button>
+      </div>
+    </div>
+  );
+}
+function ProductCard() {
+  return (
+    <div className="hover:bg-zinc-200 transition-colors duration-300 p-4 max-w-96 w-full flex flex-col space-y-2 items-center justify-center">
+      <Image
+        className="w-full rounded-2xl"
+        src={"/forma.png"}
+        width={1000}
+        height={1000}
+        alt="forma"
+      />
+      <div className="w-full flex flex-row justify-between items-center">
+        <div>
+          <h1 className="font-bold :text-2xl">BBL 2024 JERSEY</h1>
+          <div className="items-start justify-start flex space-x-2">
+            <span className="font-bold text-[#CB9803] text-2xl">₺ 250,00</span>
+            <span className="line-through text-black/50 font-bold text-sm">
+              ₺ 200,00
+            </span>
+          </div>
+        </div>
+        <div className="p-2 bg-[#CB9803]">
+          <span>%61</span>
+        </div>
+      </div>
+    </div>
   );
 }
