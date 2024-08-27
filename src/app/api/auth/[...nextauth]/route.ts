@@ -1,13 +1,13 @@
 import { auth } from "@/app/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOptions = {
+const authOptions: AuthOptions = {
   pages: {
     signIn: "/auth/login",
-    
   },
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -29,8 +29,8 @@ export const authOptions = {
           });
       },
     }),
-  ],
+  ] as any,
 };
 const handler = NextAuth(authOptions);
 // export default NextAuth(authOptions);
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
