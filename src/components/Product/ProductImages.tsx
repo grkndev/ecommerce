@@ -13,6 +13,7 @@ export default function ProductImages({ images }: { images: string[] }) {
       <div className="flex flex-row xl:flex-col gap-4 w-auto mt-2 xl:m-0">
         {images.slice(1).map((image, index) => (
           <Image
+            key={index}
             src={image}
             alt="Logo"
             width={200}

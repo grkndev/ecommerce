@@ -28,7 +28,8 @@ export default function ProductDetail({
               <span>
                 %
                 {Math.floor(
-                  ((parseFloat(price) - parseFloat(discountPrice)) / parseFloat(price)) *
+                  ((parseFloat(price) - parseFloat(discountPrice)) /
+                    parseFloat(price)) *
                     100
                 )}
               </span>
@@ -48,8 +49,9 @@ export default function ProductDetail({
         <div className="flex flex-col space-y-2">
           <span className="font-bold text-xl">Beden</span>
           <div className="space-x-2 flex flex-row">
-            {sizes.map((s) => (
+            {sizes.map((s, _) => (
               <Button
+                key={s}
                 onClick={() => setSize(s)}
                 className={cn(
                   "w-16 h-16 rounded-none",
@@ -64,9 +66,16 @@ export default function ProductDetail({
         </div>
       )}
       <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptate quasi magnam nulla reprehenderit quae laborum ipsum. Delectus, distinctio corporis. Omnis mollitia, cum ea repellendus architecto excepturi odit voluptatibus a.
-        Iste autem voluptate aliquam rem pariatur sequi consequatur animi ut dolorem, aliquid rerum quod a dolor, possimus commodi nostrum, cum beatae earum? Alias facilis, debitis minima ratione corrupti et explicabo.
-        At officia eius a perspiciatis unde facilis pariatur amet iure, recusandae quod ipsa voluptate tenetur porro quas et quia rerum, cum repellendus dolorem accusantium, fugiat inventore. Voluptas magnam eaque dolorum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+        voluptate quasi magnam nulla reprehenderit quae laborum ipsum. Delectus,
+        distinctio corporis. Omnis mollitia, cum ea repellendus architecto
+        excepturi odit voluptatibus a. Iste autem voluptate aliquam rem pariatur
+        sequi consequatur animi ut dolorem, aliquid rerum quod a dolor, possimus
+        commodi nostrum, cum beatae earum? Alias facilis, debitis minima ratione
+        corrupti et explicabo. At officia eius a perspiciatis unde facilis
+        pariatur amet iure, recusandae quod ipsa voluptate tenetur porro quas et
+        quia rerum, cum repellendus dolorem accusantium, fugiat inventore.
+        Voluptas magnam eaque dolorum!
       </div>
     </div>
   );

@@ -5,10 +5,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 export function FeedBack() {
   return (
     <div className="flex flex-col space-y-4 mt-16 w-full">
-      <p className="font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl">MEMNUNİYET BİZİM İÇİN ÇOK ÖNEMLİ!</p>
+      <p className="font-bold text-xl sm:text-3xl md:text-4xl lg:text-5xl">
+        MEMNUNİYET BİZİM İÇİN ÇOK ÖNEMLİ!
+      </p>
       <div className="">
         <Carousel
           opts={{
@@ -41,8 +44,9 @@ export function CustomerReview() {
   return (
     <div className="max-w-sm hover:shadow-2xl transition-shadow duration-200  border-2 border-[#ebebeb] flex flex-col  rounded-lg p-4 w-full space-y-4">
       <div className="flex flex-row space-x-2">
-        {Array.from({ length: 5 }).map((i) => (
-          <img
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Image
+            key={i}
             className="w-4 h-4"
             src={"/assests/star.png"}
             width={500}
@@ -54,9 +58,9 @@ export function CustomerReview() {
       <div className="flex flex-col space-y-4">
         <p className="font-bold text-xl lg:text-3xl">Ferit K.</p>
         <p className="text-sm lg:text-lg text-wrap">
-          "Online alışveriş deneyimim mükemmeldi! Ürünlerin kalitesi harika,
-          fiyatlar uygun ve kargo çok hızlı. Güvenilir ve sorunsuz bir site,
-          kesinlikle tekrar alışveriş yapacağım!"
+          &quot;Online alışveriş deneyimim mükemmeldi! Ürünlerin kalitesi
+          harika, fiyatlar uygun ve kargo çok hızlı. Güvenilir ve sorunsuz bir
+          site, kesinlikle tekrar alışveriş yapacağım!&quot;
         </p>
       </div>
     </div>
