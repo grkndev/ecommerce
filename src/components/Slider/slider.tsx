@@ -39,10 +39,10 @@ export default function Slider() {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <div className="absolute z-50 bottom-10 flex items-center justify-between gap-4 right-10 ">
-        <div className="flex items-center gap-4 ">
+      <div className="absolute z-50 sm:bottom-5 md:bottom-10 sm:right-5 md:right-10 flex items-center justify-between gap-4 ">
+        <div className="sm:flex items-center gap-4 hidden">
           <Button
-            className="w-10  h-10 rounded-full bg-[#FE7528] hover:bg-[#a04d1d]"
+            className="w-8 h-8 rounded-full bg-[#FE7528] hover:bg-[#a04d1d]"
             onClick={() => {
               if (current === 1) return api?.scrollTo(count - 1);
               api?.scrollTo(current - 2);
@@ -52,21 +52,19 @@ export default function Slider() {
               <ChevronLeftIcon className="text-white size-5 " />
             </div>
           </Button>
-          <div className="w-full flex gap-4 ">
+          <div className="w-full h-full  flex gap-x-4 ">
             {Array.from({ length: count }, (_, i) => (
               <Button
                 key={i}
-                className={`hover:bg-darkTeknokent border-2 border-solid w-5 h-9 rounded-full border-[#FE7528] ${
-                  current === i + 1
-                    ? "bg-[#FE7528]  "
-                    : "bg-transparent  "
+                className={`size-5 hover:bg-darkTeknokent border-2 border-solid rounded-full border-[#FE7528] ${
+                  current === i + 1 ? "bg-[#FE7528]  " : "bg-transparent  "
                 }`}
                 onClick={() => api?.scrollTo(i)}
               />
             ))}
           </div>
           <Button
-            className="w-10 h-10 rounded-full bg-[#FE7528] hover:bg-[#a04d1d]"
+            className="w-8 h-8 rounded-full bg-[#FE7528] hover:bg-[#a04d1d]"
             onClick={() => {
               if (current === count) return api?.scrollTo(0);
               api?.scrollTo(current);
@@ -86,9 +84,9 @@ export default function Slider() {
           <CarouselItem key={i} className="h-auto ">
             <div
               style={{
-                backgroundImage: `url(/HERO.png)`,
+                backgroundImage: `url(/brand.jpg)`,
               }}
-              className="sm:h-[40vh] h-[25vh] md:h-[50vh] xl:h-[54vh] bg-no-repeat  w-full"
+              className="aspect-[11/3] w-full bg-cover bg-no-repeat"
             ></div>
           </CarouselItem>
         ))}
