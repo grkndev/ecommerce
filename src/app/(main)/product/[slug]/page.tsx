@@ -29,7 +29,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     });
   };
   return (
-    <div className="w-full flex flex-col px-16 py-8 space-y-4">
+    <div className="w-full flex flex-col px-4 lg:px-16 py-8 space-y-4">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -46,7 +46,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="w-full  flex flex-col lg:flex-row space-x-16 h-full ">
+      <div className="w-full  flex flex-col lg:flex-row lg:space-x-16 h-full ">
         <ProductImages
           images={[
             "https://ideacdn.net/idea/gr/05/myassets/products/138/forma01.png",
@@ -54,7 +54,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             "https://ideacdn.net/idea/gr/05/myassets/products/138/forma03.png",
           ]}
         />
-        <div className="space-y-8 w-5/6 xl:w-1/2 justify-between flex flex-col">
+        <div className="space-y-8 justify-between items-center flex flex-col w-full">
           <ProductDetail
             name="BBL 2024 JERSEY"
             price={"1050.00"}
@@ -62,9 +62,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             sizes={["S", "M", "L", "XL", "2XL"]}
             images={[]}
           />
-          <div className="flex flex-col  md:space-x-2 md:flex-row items-center justify-center">
+          <div className="flex flex-col space-y-2 md:space-y-0 px-4 md:space-x-2 md:flex-row items-center justify-center">
             <ProductCount count={count} setCount={setCount} />
-            <div className="w-full flex flex-col sm:flex-row sm:space-x-2 items-center justify-center">
+            <div className="w-full flex space-x-2 flex-row sm:space-x-2 items-center justify-center">
               <Button
                 onClick={handleAddCart}
                 className="w-full rounded-none space-x-2 h-16"

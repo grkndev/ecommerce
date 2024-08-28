@@ -86,7 +86,7 @@ export default function Slider() {
               style={{
                 backgroundImage: `url(/brand.jpg)`,
               }}
-              className="aspect-[11/3] w-full bg-cover bg-no-repeat"
+              className="aspect-[19.2/5] w-full bg-contain bg-no-repeat"
             ></div>
           </CarouselItem>
         ))}

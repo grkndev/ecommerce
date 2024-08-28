@@ -19,9 +19,9 @@ export default function ProductDetail({
 }: ProductDetailProps) {
   const [size, setSize] = React.useState<string>("S");
   return (
-    <div className="flex flex-col space-y-10 w-full mt-8 xl:m-0">
-      <div className="flex flex-col space-y-4 w-full ">
-        <h1 className="font-bold text-5xl">{name}</h1>
+    <div className="flex flex-col space-y-10 w-full mt-8 xl:m-0 ">
+      <div className="flex flex-col space-y-4 w-full md:w-1/2">
+        <h1 className="font-bold text-3xl lg:text-5xl">{name}</h1>
         <div className="flex flex-row items-center space-x-4">
           {discountPrice && (
             <div className="bg-[#CB9803] w-12 h-12 items-center justify-center flex">
@@ -36,11 +36,11 @@ export default function ProductDetail({
             </div>
           )}
           <div className="flex space-x-1">
-            <h5 className="font-bold text-4xl">
-              {discountPrice ? discountPrice : price}
+            <h5 className="font-bold text-3xl lg:text-4xl">
+              ₺{discountPrice ? discountPrice : price}
             </h5>
             {discountPrice && (
-              <h6 className="text-xl line-through opacity-50">{price}</h6>
+              <h6 className="text-base lg:text-xl line-through opacity-50">₺{price}</h6>
             )}
           </div>
         </div>
@@ -48,13 +48,13 @@ export default function ProductDetail({
       {sizes && (
         <div className="flex flex-col space-y-2">
           <span className="font-bold text-xl">Beden</span>
-          <div className="space-x-2 flex flex-row">
+          <div className="flex flex-row  items-center md:justify-normal space-x-4">
             {sizes.map((s, _) => (
               <Button
                 key={s}
                 onClick={() => setSize(s)}
                 className={cn(
-                  "w-16 h-16 rounded-none",
+                  "w-14 h-14 rounded-none",
                   size === s && "bg-black text-white"
                 )}
                 variant={"outline"}
@@ -65,7 +65,7 @@ export default function ProductDetail({
           </div>
         </div>
       )}
-      <div>
+      <div className="w-5/6 items-center justify-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
         voluptate quasi magnam nulla reprehenderit quae laborum ipsum. Delectus,
         distinctio corporis. Omnis mollitia, cum ea repellendus architecto
